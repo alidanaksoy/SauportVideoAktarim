@@ -1,0 +1,39 @@
+﻿@model VideoAktarim.Models.TemplateModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<table>
+    <thead>
+        <tr>
+            <th>PROGRAMID</th>
+            @*<th>MCOURSEID</th>*@
+            <th>COURSEID</th>
+            @*<th>TEMPLATEID</th>
+            <th>REFID</th>*@
+            <th>TITLE</th>
+            <th>SWEEK</th>
+            <th>EWEEK</th>
+            <th>URL</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in @ViewBag.liste)
+        {
+            <tr>
+                <td style="width:25%">@item.PROGRAMID</td>
+                @*<td style="width:25%">@item.MCOURSEID</td>*@
+                <td style="width:25%">@item.COURSEID</td>
+                @*<td style="width:25%">@item.TEMPLATEID</td>
+                <td style="width:25%">@item.REFID</td>*@
+                <td style="width:25%">@item.TITLE</td>
+                <td style="width:25%">@item.TEXTFIELD1</td>
+                <td style="width:25%">@item.NUMBERFIELD1</td>
+                <td style="width:25%">@item.URL</td>
+               
+            </tr>
+        }
+    </tbody>
+</table>
+

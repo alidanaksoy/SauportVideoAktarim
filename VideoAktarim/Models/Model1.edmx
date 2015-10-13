@@ -1,0 +1,1048 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SAUPORTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AL_CS_MT_ACTIVITY_GROUP">
+          <Key>
+            <PropertyRef Name="GROUPID" />
+            <PropertyRef Name="ACTIVITYID" />
+          </Key>
+          <Property Name="GROUPID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ACTIVITYID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TIMEADDED" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AL_CS_MT_PMCOURSE">
+          <Key>
+            <PropertyRef Name="MCOURSEID" />
+            <PropertyRef Name="PROGRAMID" />
+          </Key>
+          <Property Name="MCOURSEID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PROGRAMID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DATEADDED" Type="datetime" Nullable="false" />
+          <Property Name="MCOURSEID_OLD" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="AL_CS_ST_COURSE">
+          <Key>
+            <PropertyRef Name="COURSEID" />
+          </Key>
+          <Property Name="COURSEID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PROGRAMID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MCOURSEID" Type="uniqueidentifier" />
+          <Property Name="TERMID" Type="uniqueidentifier" />
+          <Property Name="COURSENAME" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="COURSECODE" Type="nvarchar" MaxLength="30" />
+          <Property Name="ENROLLMENTTYPE" Type="tinyint" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="4000" />
+          <Property Name="PASSINGSCORE" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="STARTDATE" Type="datetime" />
+          <Property Name="ENDDATE" Type="datetime" />
+          <Property Name="TEXTFIELD1" Type="nvarchar" MaxLength="4000" />
+          <Property Name="TEXTFIELD2" Type="nvarchar" MaxLength="4000" />
+          <Property Name="TEXTFIELD3" Type="nvarchar" MaxLength="4000" />
+          <Property Name="NUMBERFIELD1" Type="float" />
+          <Property Name="NUMBERFIELD2" Type="float" />
+          <Property Name="NUMBERFIELD3" Type="float" />
+          <Property Name="DATECREATED" Type="datetime" Nullable="false" />
+          <Property Name="DATEMODIFIED" Type="datetime" Nullable="false" />
+          <Property Name="USERCREATED" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="USERMODIFIED" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DBSTATUS" Type="tinyint" Nullable="false" />
+          <Property Name="SYNCKEY_OLD" Type="nvarchar" MaxLength="100" />
+          <Property Name="SYNCDATE_OLD" Type="datetime" />
+          <Property Name="SYNCAUTO_OLD" Type="tinyint" />
+          <Property Name="ESTIMATEDDURATION" Type="int" Nullable="false" />
+          <Property Name="VIEWMODE" Type="tinyint" Nullable="false" />
+          <Property Name="COURSETYPE" Type="tinyint" Nullable="false" />
+          <Property Name="LASTSYNCID_OLD" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="AL_CS_ST_GROUP">
+          <Key>
+            <PropertyRef Name="GROUPID" />
+          </Key>
+          <Property Name="GROUPID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="COURSEID" Type="uniqueidentifier" />
+          <Property Name="GROUPNAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="GROUPTYPE" Type="tinyint" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="1000" />
+          <Property Name="MAXUSERS" Type="int" Nullable="false" />
+          <Property Name="PRIVACYMODE" Type="tinyint" />
+          <Property Name="TEXTFIELD1" Type="nvarchar" MaxLength="4000" />
+          <Property Name="TEXTFIELD2" Type="nvarchar" MaxLength="4000" />
+          <Property Name="TEXTFIELD3" Type="nvarchar" MaxLength="4000" />
+          <Property Name="NUMBERFIELD1" Type="float" />
+          <Property Name="NUMBERFIELD2" Type="float" />
+          <Property Name="NUMBERFIELD3" Type="float" />
+          <Property Name="DATECREATED" Type="datetime" Nullable="false" />
+          <Property Name="DATEMODIFIED" Type="datetime" Nullable="false" />
+          <Property Name="USERCREATED" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="USERMODIFIED" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DBSTATUS" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AL_CS_ST_MASTERCOURSE">
+          <Key>
+            <PropertyRef Name="MCOURSEID" />
+          </Key>
+          <Property Name="MCOURSEID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MCOURSECODE" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="MCOURSENAME" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CREDITS" Type="int" Nullable="false" />
+          <Property Name="ECTS_CREDITS" Type="int" />
+          <Property Name="CREDIT_THEORIC" Type="int" Nullable="false" />
+          <Property Name="CREDIT_APPLICATION" Type="int" Nullable="false" />
+          <Property Name="ISCOMMON" Type="tinyint" Nullable="false" />
+          <Property Name="DATECREATED" Type="smalldatetime" />
+          <Property Name="MCOURSEID_OLD" Type="nvarchar" MaxLength="20" />
+          <Property Name="SYNCKEY" Type="nvarchar" MaxLength="50" />
+          <Property Name="SYNCDATE" Type="datetime" />
+          <Property Name="AUTOSYNC" Type="tinyint" Nullable="false" />
+          <Property Name="SYNCNEWKEY" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="AL_LS_ST_ACTIVITY">
+          <Key>
+            <PropertyRef Name="ACTIVITYID" />
+          </Key>
+          <Property Name="ACTIVITYID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="COURSEID" Type="uniqueidentifier" />
+          <Property Name="ITEMID" Type="uniqueidentifier" />
+          <Property Name="ITEMORDER" Type="int" Nullable="false" />
+          <Property Name="ACTIVITYNAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ACTIVITYCODE" Type="nvarchar" MaxLength="30" />
+          <Property Name="ENROLLMENTTYPE" Type="tinyint" Nullable="false" />
+          <Property Name="FEEDBACK" Type="tinyint" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="4000" />
+          <Property Name="ISOPTIONAL" Type="tinyint" Nullable="false" />
+          <Property Name="SCOREABLE" Type="tinyint" Nullable="false" />
+          <Property Name="PASSINGSCORE" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="STARTWEEK" Type="int" />
+          <Property Name="STARTDAY" Type="int" />
+          <Property Name="ENDWEEK" Type="int" />
+          <Property Name="ENDDAY" Type="int" />
+          <Property Name="TEXTFIELD1" Type="nvarchar" MaxLength="4000" />
+          <Property Name="TEXTFIELD2" Type="nvarchar" MaxLength="4000" />
+          <Property Name="TEXTFIELD3" Type="nvarchar" MaxLength="4000" />
+          <Property Name="NUMBERFIELD1" Type="float" />
+          <Property Name="NUMBERFIELD2" Type="float" />
+          <Property Name="NUMBERFIELD3" Type="float" />
+          <Property Name="DATECREATED" Type="datetime" Nullable="false" />
+          <Property Name="DATEMODIFIED" Type="datetime" Nullable="false" />
+          <Property Name="USERCREATED" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="USERMODIFIED" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DBSTATUS" Type="tinyint" />
+          <Property Name="TOTALPAGE" Type="int" />
+          <Property Name="FINISHMESSAGE" Type="nvarchar" MaxLength="4000" />
+          <Property Name="MESSAGETOSHOW" Type="nvarchar" MaxLength="4000" />
+          <Property Name="TRACKING" Type="tinyint" Nullable="false" />
+          <Property Name="AUTOSCORRING" Type="tinyint" Nullable="false" />
+          <Property Name="SACTIVITYID" Type="uniqueidentifier" />
+          <Property Name="OLDITEMID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="AL_LS_ST_LESSON">
+          <Key>
+            <PropertyRef Name="ELESSONID" />
+          </Key>
+          <Property Name="MCOURSEID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ELESSONID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="LESSONNAME" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="SHORTNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="DESCRIPTION" Type="nvarchar(max)" />
+          <Property Name="DEFAULTPAGE" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="LESSONTYPE" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="PACKAGEID" Type="uniqueidentifier" />
+          <Property Name="ISSCOSCORING" Type="tinyint" Nullable="false" />
+          <Property Name="LANGUAGE" Type="varchar" MaxLength="2" />
+          <Property Name="USEINPLANNING" Type="tinyint" Nullable="false" />
+          <Property Name="SCOIDENTIFIER" Type="nvarchar" MaxLength="50" />
+          <Property Name="SCOTITLE" Type="nvarchar" MaxLength="50" />
+          <Property Name="ESTIMATEDDURATION" Type="int" Nullable="false" />
+          <Property Name="TARGETAUDIENCE" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="TEXTFIELD1" Type="nvarchar" MaxLength="4000" />
+          <Property Name="TEXTFIELD2" Type="nvarchar" MaxLength="4000" />
+          <Property Name="TEXTFIELD3" Type="nvarchar" MaxLength="4000" />
+          <Property Name="NUMBERFIELD1" Type="float" />
+          <Property Name="NUMBERFIELD2" Type="float" />
+          <Property Name="NUMBERFIELD3" Type="float" />
+          <Property Name="DATECREATED" Type="datetime" Nullable="false" />
+          <Property Name="DATEMODIFIED" Type="datetime" Nullable="false" />
+          <Property Name="USERCREATED" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="USERMODIFIED" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DBSTATUS" Type="tinyint" Nullable="false" />
+          <Property Name="CHTOOL" Type="nvarchar" MaxLength="500" />
+          <Property Name="CHSTATUS" Type="bit" />
+          <Property Name="CHTITLE" Type="nvarchar" MaxLength="500" />
+          <Property Name="CONVERTEDSOURCE" Type="bit" Nullable="false" />
+          <Property Name="INSTALLED" Type="tinyint" Nullable="false" />
+          <Property Name="INSTALLEDMESSAGE" Type="nvarchar" MaxLength="4000" />
+          <Property Name="FILECHECK" Type="tinyint" Nullable="false" />
+          <Property Name="FILECHECKMESSAGE" Type="nvarchar" MaxLength="4000" />
+        </EntityType>
+        <EntityType Name="AL_SR_ST_SOURCE">
+          <Key>
+            <PropertyRef Name="ACTIVITYID" />
+          </Key>
+          <Property Name="ACTIVITYID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="COURSEID" Type="uniqueidentifier" />
+          <Property Name="ITEMID" Type="uniqueidentifier" />
+          <Property Name="ITEMORDER" Type="int" Nullable="false" />
+          <Property Name="ACTIVITYCODE" Type="nvarchar" MaxLength="30" />
+          <Property Name="ACTIVITYNAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ENROLLMENTTYPE" Type="tinyint" Nullable="false" />
+          <Property Name="FEEDBACK" Type="tinyint" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="4000" />
+          <Property Name="ISOPTIONAL" Type="tinyint" Nullable="false" />
+          <Property Name="SCOREABLE" Type="tinyint" Nullable="false" />
+          <Property Name="PASSINGSCORE" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="STARTWEEK" Type="int" />
+          <Property Name="STARTDAY" Type="int" />
+          <Property Name="ENDWEEK" Type="int" />
+          <Property Name="ENDDAY" Type="int" />
+          <Property Name="TEXTFIELD1" Type="nvarchar" MaxLength="4000" />
+          <Property Name="TEXTFIELD2" Type="nvarchar" MaxLength="4000" />
+          <Property Name="TEXTFIELD3" Type="nvarchar" MaxLength="4000" />
+          <Property Name="NUMBERFIELD2" Type="float" />
+          <Property Name="NUMBERFIELD1" Type="float" />
+          <Property Name="NUMBERFIELD3" Type="float" />
+          <Property Name="DATECREATED" Type="datetime" Nullable="false" />
+          <Property Name="DATEMODIFIED" Type="datetime" Nullable="false" />
+          <Property Name="USERCREATED" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="USERMODIFIED" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DBSTATUS" Type="tinyint" Nullable="false" />
+          <Property Name="SRCTYPE" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SRCURL" Type="nvarchar" MaxLength="500" />
+          <Property Name="SRCBODY" Type="nvarchar" MaxLength="4000" />
+          <Property Name="VISITEDCOUNT" Type="int" />
+        </EntityType>
+        <EntityType Name="AL_ST_PROGRAMS">
+          <Key>
+            <PropertyRef Name="PROGRAMID" />
+          </Key>
+          <Property Name="PROGRAMID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SITEID" Type="uniqueidentifier" />
+          <Property Name="CALENDERID" Type="uniqueidentifier" />
+          <Property Name="FEEDBACK" Type="tinyint" />
+          <Property Name="PROGRAMCODE" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="PROGRAMNAME" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="1000" />
+          <Property Name="EDUCATIONLANGUAGE" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="DEPARTMENTCODE" Type="varchar" MaxLength="5" />
+          <Property Name="EDUCATIONTYPECODE" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="PROGRAMLOGO" Type="nvarchar" MaxLength="200" />
+          <Property Name="PROGRAMPICTURE" Type="nvarchar" MaxLength="200" />
+          <Property Name="INDEXPAGEMESSAGE" Type="nvarchar(max)" />
+          <Property Name="TEXTFIELD1" Type="nvarchar" MaxLength="4000" />
+          <Property Name="TEXTFIELD2" Type="nvarchar" MaxLength="4000" />
+          <Property Name="TEXTFIELD3" Type="nvarchar" MaxLength="4000" />
+          <Property Name="NUMBERFIELD1" Type="float" />
+          <Property Name="NUMBERFIELD2" Type="float" />
+          <Property Name="NUMBERFIELD3" Type="float" />
+          <Property Name="SYNCKEY" Type="nvarchar" MaxLength="100" />
+          <Property Name="SYNCDATE" Type="datetime" />
+          <Property Name="SYNCAUTO" Type="tinyint" Nullable="false" />
+          <Property Name="DBSTATUS" Type="tinyint" Nullable="false" />
+          <Property Name="DATECREATED" Type="datetime" Nullable="false" />
+          <Property Name="DATEMODIFIED" Type="datetime" Nullable="false" />
+          <Property Name="USERCREATED" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="USERMODIFIED" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WL_LS_LESSON_CONTROL">
+          <Key>
+            <PropertyRef Name="ELESSONID" />
+          </Key>
+          <Property Name="MCOURSEID" Type="uniqueidentifier" />
+          <Property Name="ELESSONID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="COURSEID" Type="uniqueidentifier" />
+          <Property Name="STATUS" Type="int" />
+          <Property Name="PATH" Type="nvarchar(max)" />
+          <Property Name="NOTE" Type="nvarchar(max)" />
+          <Property Name="USERCREATED" Type="uniqueidentifier" />
+          <Property Name="DATECREATED" Type="datetime" />
+          <Property Name="USERMODIFIED" Type="uniqueidentifier" />
+          <Property Name="DATEMODIFIED" Type="datetime" />
+          <Property Name="ISCONFIRM" Type="bit" />
+          <Property Name="STARTWEEK" Type="int" />
+          <Property Name="ENDWEEK" Type="int" />
+          <Property Name="STARTDAY" Type="int" />
+          <Property Name="ENDDAY" Type="int" />
+          <Property Name="ACTIVITYNAME" Type="nvarchar" MaxLength="500" />
+          <Property Name="TEMPLATEADDED" Type="int" />
+          <Property Name="ELESSONOLDID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="WL_SR_ST_TEMPLATE_2">
+          <Key>
+            <PropertyRef Name="TEMPLATEID" />
+          </Key>
+          <Property Name="TEMPLATEID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MCOURSEID" Type="uniqueidentifier" />
+          <Property Name="TITLE" Type="nvarchar" MaxLength="500" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="4000" />
+          <Property Name="TEXTFIELD1" Type="nvarchar" MaxLength="4000" />
+          <Property Name="TEXTFIELD2" Type="nvarchar" MaxLength="4000" />
+          <Property Name="TEXTFIELD3" Type="nvarchar" MaxLength="4000" />
+          <Property Name="NUMBERFIELD2" Type="float" />
+          <Property Name="NUMBERFIELD1" Type="float" />
+          <Property Name="NUMBERFIELD3" Type="float" />
+          <Property Name="DATECREATED" Type="datetime" Nullable="false" />
+          <Property Name="DATEMODIFIED" Type="datetime" Nullable="false" />
+          <Property Name="USERCREATED" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="USERMODIFIED" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DBSTATUS" Type="tinyint" Nullable="false" />
+          <Property Name="SRCTYPE" Type="nvarchar" MaxLength="50" />
+          <Property Name="SRCURL" Type="nvarchar" MaxLength="500" />
+          <Property Name="SRCBODY" Type="nvarchar" MaxLength="4000" />
+          <Property Name="REFID" Type="uniqueidentifier" />
+          <Property Name="SOURCEADDED" Type="int" />
+        </EntityType>
+        <Association Name="FK_AL_CS_MT_PMCOURSE_AL_ST_PROGRAMS">
+          <End Role="AL_ST_PROGRAMS" Type="Self.AL_ST_PROGRAMS" Multiplicity="1" />
+          <End Role="AL_CS_MT_PMCOURSE" Type="Self.AL_CS_MT_PMCOURSE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AL_ST_PROGRAMS">
+              <PropertyRef Name="PROGRAMID" />
+            </Principal>
+            <Dependent Role="AL_CS_MT_PMCOURSE">
+              <PropertyRef Name="PROGRAMID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AL_CS_ST_COURSE_AL_ST_PROGRAMS">
+          <End Role="AL_ST_PROGRAMS" Type="Self.AL_ST_PROGRAMS" Multiplicity="1" />
+          <End Role="AL_CS_ST_COURSE" Type="Self.AL_CS_ST_COURSE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AL_ST_PROGRAMS">
+              <PropertyRef Name="PROGRAMID" />
+            </Principal>
+            <Dependent Role="AL_CS_ST_COURSE">
+              <PropertyRef Name="PROGRAMID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AL_CS_ST_GROUP_AL_CS_ST_COURSE">
+          <End Role="AL_CS_ST_COURSE" Type="Self.AL_CS_ST_COURSE" Multiplicity="0..1" />
+          <End Role="AL_CS_ST_GROUP" Type="Self.AL_CS_ST_GROUP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AL_CS_ST_COURSE">
+              <PropertyRef Name="COURSEID" />
+            </Principal>
+            <Dependent Role="AL_CS_ST_GROUP">
+              <PropertyRef Name="COURSEID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SAUPORTModelStoreContainer">
+          <EntitySet Name="AL_CS_MT_ACTIVITY_GROUP" EntityType="Self.AL_CS_MT_ACTIVITY_GROUP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AL_CS_MT_PMCOURSE" EntityType="Self.AL_CS_MT_PMCOURSE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AL_CS_ST_COURSE" EntityType="Self.AL_CS_ST_COURSE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AL_CS_ST_GROUP" EntityType="Self.AL_CS_ST_GROUP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AL_CS_ST_MASTERCOURSE" EntityType="Self.AL_CS_ST_MASTERCOURSE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AL_LS_ST_ACTIVITY" EntityType="Self.AL_LS_ST_ACTIVITY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AL_LS_ST_LESSON" EntityType="Self.AL_LS_ST_LESSON" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AL_SR_ST_SOURCE" EntityType="Self.AL_SR_ST_SOURCE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AL_ST_PROGRAMS" EntityType="Self.AL_ST_PROGRAMS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WL_LS_LESSON_CONTROL" EntityType="Self.WL_LS_LESSON_CONTROL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WL_SR_ST_TEMPLATE_2" EntityType="Self.WL_SR_ST_TEMPLATE_2" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_AL_CS_MT_PMCOURSE_AL_ST_PROGRAMS" Association="Self.FK_AL_CS_MT_PMCOURSE_AL_ST_PROGRAMS">
+            <End Role="AL_ST_PROGRAMS" EntitySet="AL_ST_PROGRAMS" />
+            <End Role="AL_CS_MT_PMCOURSE" EntitySet="AL_CS_MT_PMCOURSE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AL_CS_ST_COURSE_AL_ST_PROGRAMS" Association="Self.FK_AL_CS_ST_COURSE_AL_ST_PROGRAMS">
+            <End Role="AL_ST_PROGRAMS" EntitySet="AL_ST_PROGRAMS" />
+            <End Role="AL_CS_ST_COURSE" EntitySet="AL_CS_ST_COURSE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AL_CS_ST_GROUP_AL_CS_ST_COURSE" Association="Self.FK_AL_CS_ST_GROUP_AL_CS_ST_COURSE">
+            <End Role="AL_CS_ST_COURSE" EntitySet="AL_CS_ST_COURSE" />
+            <End Role="AL_CS_ST_GROUP" EntitySet="AL_CS_ST_GROUP" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SAUPORTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AL_CS_MT_PMCOURSE">
+          <Key>
+            <PropertyRef Name="MCOURSEID" />
+            <PropertyRef Name="PROGRAMID" />
+          </Key>
+          <Property Name="MCOURSEID" Type="Guid" Nullable="false" />
+          <Property Name="PROGRAMID" Type="Guid" Nullable="false" />
+          <Property Name="DATEADDED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MCOURSEID_OLD" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AL_ST_PROGRAMS" Relationship="Self.FK_AL_CS_MT_PMCOURSE_AL_ST_PROGRAMS" FromRole="AL_CS_MT_PMCOURSE" ToRole="AL_ST_PROGRAMS" />
+        </EntityType>
+        <EntityType Name="AL_CS_ST_COURSE">
+          <Key>
+            <PropertyRef Name="COURSEID" />
+          </Key>
+          <Property Name="COURSEID" Type="Guid" Nullable="false" />
+          <Property Name="PROGRAMID" Type="Guid" Nullable="false" />
+          <Property Name="MCOURSEID" Type="Guid" />
+          <Property Name="TERMID" Type="Guid" />
+          <Property Name="COURSENAME" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="COURSECODE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ENROLLMENTTYPE" Type="Byte" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="PASSINGSCORE" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="STARTDATE" Type="DateTime" Precision="3" />
+          <Property Name="ENDDATE" Type="DateTime" Precision="3" />
+          <Property Name="TEXTFIELD1" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="TEXTFIELD2" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="TEXTFIELD3" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="NUMBERFIELD1" Type="Double" />
+          <Property Name="NUMBERFIELD2" Type="Double" />
+          <Property Name="NUMBERFIELD3" Type="Double" />
+          <Property Name="DATECREATED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DATEMODIFIED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="USERCREATED" Type="Guid" Nullable="false" />
+          <Property Name="USERMODIFIED" Type="Guid" Nullable="false" />
+          <Property Name="DBSTATUS" Type="Byte" Nullable="false" />
+          <Property Name="SYNCKEY_OLD" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SYNCDATE_OLD" Type="DateTime" Precision="3" />
+          <Property Name="SYNCAUTO_OLD" Type="Byte" />
+          <Property Name="ESTIMATEDDURATION" Type="Int32" Nullable="false" />
+          <Property Name="VIEWMODE" Type="Byte" Nullable="false" />
+          <Property Name="COURSETYPE" Type="Byte" Nullable="false" />
+          <Property Name="LASTSYNCID_OLD" Type="Guid" />
+          <NavigationProperty Name="AL_ST_PROGRAMS" Relationship="Self.FK_AL_CS_ST_COURSE_AL_ST_PROGRAMS" FromRole="AL_CS_ST_COURSE" ToRole="AL_ST_PROGRAMS" />
+          <NavigationProperty Name="AL_CS_ST_GROUP" Relationship="SAUPORTModel.FK_AL_CS_ST_GROUP_AL_CS_ST_COURSE" FromRole="AL_CS_ST_COURSE" ToRole="AL_CS_ST_GROUP" />
+        </EntityType>
+        <EntityType Name="AL_CS_ST_MASTERCOURSE">
+          <Key>
+            <PropertyRef Name="MCOURSEID" />
+          </Key>
+          <Property Name="MCOURSEID" Type="Guid" Nullable="false" />
+          <Property Name="MCOURSECODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MCOURSENAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CREDITS" Type="Int32" Nullable="false" />
+          <Property Name="ECTS_CREDITS" Type="Int32" />
+          <Property Name="CREDIT_THEORIC" Type="Int32" Nullable="false" />
+          <Property Name="CREDIT_APPLICATION" Type="Int32" Nullable="false" />
+          <Property Name="ISCOMMON" Type="Byte" Nullable="false" />
+          <Property Name="DATECREATED" Type="DateTime" Precision="0" />
+          <Property Name="MCOURSEID_OLD" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SYNCKEY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SYNCDATE" Type="DateTime" Precision="3" />
+          <Property Name="AUTOSYNC" Type="Byte" Nullable="false" />
+          <Property Name="SYNCNEWKEY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AL_LS_ST_ACTIVITY">
+          <Key>
+            <PropertyRef Name="ACTIVITYID" />
+          </Key>
+          <Property Name="ACTIVITYID" Type="Guid" Nullable="false" />
+          <Property Name="COURSEID" Type="Guid" />
+          <Property Name="ITEMID" Type="Guid" />
+          <Property Name="ITEMORDER" Type="Int32" Nullable="false" />
+          <Property Name="ACTIVITYNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ACTIVITYCODE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ENROLLMENTTYPE" Type="Byte" Nullable="false" />
+          <Property Name="FEEDBACK" Type="Byte" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="ISOPTIONAL" Type="Byte" Nullable="false" />
+          <Property Name="SCOREABLE" Type="Byte" Nullable="false" />
+          <Property Name="PASSINGSCORE" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="STARTWEEK" Type="Int32" />
+          <Property Name="STARTDAY" Type="Int32" />
+          <Property Name="ENDWEEK" Type="Int32" />
+          <Property Name="ENDDAY" Type="Int32" />
+          <Property Name="TEXTFIELD1" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="TEXTFIELD2" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="TEXTFIELD3" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="NUMBERFIELD1" Type="Double" />
+          <Property Name="NUMBERFIELD2" Type="Double" />
+          <Property Name="NUMBERFIELD3" Type="Double" />
+          <Property Name="DATECREATED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DATEMODIFIED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="USERCREATED" Type="Guid" Nullable="false" />
+          <Property Name="USERMODIFIED" Type="Guid" Nullable="false" />
+          <Property Name="DBSTATUS" Type="Byte" />
+          <Property Name="TOTALPAGE" Type="Int32" />
+          <Property Name="FINISHMESSAGE" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="MESSAGETOSHOW" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="TRACKING" Type="Byte" Nullable="false" />
+          <Property Name="AUTOSCORRING" Type="Byte" Nullable="false" />
+          <Property Name="SACTIVITYID" Type="Guid" />
+          <Property Name="OLDITEMID" Type="Guid" />
+        </EntityType>
+        <EntityType Name="AL_LS_ST_LESSON">
+          <Key>
+            <PropertyRef Name="ELESSONID" />
+          </Key>
+          <Property Name="MCOURSEID" Type="Guid" Nullable="false" />
+          <Property Name="ELESSONID" Type="Guid" Nullable="false" />
+          <Property Name="LESSONNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SHORTNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DEFAULTPAGE" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LESSONTYPE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PACKAGEID" Type="Guid" />
+          <Property Name="ISSCOSCORING" Type="Byte" Nullable="false" />
+          <Property Name="LANGUAGE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="USEINPLANNING" Type="Byte" Nullable="false" />
+          <Property Name="SCOIDENTIFIER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SCOTITLE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ESTIMATEDDURATION" Type="Int32" Nullable="false" />
+          <Property Name="TARGETAUDIENCE" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TEXTFIELD1" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="TEXTFIELD2" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="TEXTFIELD3" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="NUMBERFIELD1" Type="Double" />
+          <Property Name="NUMBERFIELD2" Type="Double" />
+          <Property Name="NUMBERFIELD3" Type="Double" />
+          <Property Name="DATECREATED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DATEMODIFIED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="USERCREATED" Type="Guid" Nullable="false" />
+          <Property Name="USERMODIFIED" Type="Guid" Nullable="false" />
+          <Property Name="DBSTATUS" Type="Byte" Nullable="false" />
+          <Property Name="CHTOOL" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CHSTATUS" Type="Boolean" />
+          <Property Name="CHTITLE" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CONVERTEDSOURCE" Type="Boolean" Nullable="false" />
+          <Property Name="INSTALLED" Type="Byte" Nullable="false" />
+          <Property Name="INSTALLEDMESSAGE" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="FILECHECK" Type="Byte" Nullable="false" />
+          <Property Name="FILECHECKMESSAGE" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AL_SR_ST_SOURCE">
+          <Key>
+            <PropertyRef Name="ACTIVITYID" />
+          </Key>
+          <Property Name="ACTIVITYID" Type="Guid" Nullable="false" />
+          <Property Name="COURSEID" Type="Guid" />
+          <Property Name="ITEMID" Type="Guid" />
+          <Property Name="ITEMORDER" Type="Int32" Nullable="false" />
+          <Property Name="ACTIVITYCODE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ACTIVITYNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ENROLLMENTTYPE" Type="Byte" Nullable="false" />
+          <Property Name="FEEDBACK" Type="Byte" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="ISOPTIONAL" Type="Byte" Nullable="false" />
+          <Property Name="SCOREABLE" Type="Byte" Nullable="false" />
+          <Property Name="PASSINGSCORE" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="STARTWEEK" Type="Int32" />
+          <Property Name="STARTDAY" Type="Int32" />
+          <Property Name="ENDWEEK" Type="Int32" />
+          <Property Name="ENDDAY" Type="Int32" />
+          <Property Name="TEXTFIELD1" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="TEXTFIELD2" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="TEXTFIELD3" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="NUMBERFIELD2" Type="Double" />
+          <Property Name="NUMBERFIELD1" Type="Double" />
+          <Property Name="NUMBERFIELD3" Type="Double" />
+          <Property Name="DATECREATED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DATEMODIFIED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="USERCREATED" Type="Guid" Nullable="false" />
+          <Property Name="USERMODIFIED" Type="Guid" Nullable="false" />
+          <Property Name="DBSTATUS" Type="Byte" Nullable="false" />
+          <Property Name="SRCTYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SRCURL" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SRCBODY" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="VISITEDCOUNT" Type="Int32" />
+        </EntityType>
+        <EntityType Name="AL_ST_PROGRAMS">
+          <Key>
+            <PropertyRef Name="PROGRAMID" />
+          </Key>
+          <Property Name="PROGRAMID" Type="Guid" Nullable="false" />
+          <Property Name="SITEID" Type="Guid" />
+          <Property Name="CALENDERID" Type="Guid" />
+          <Property Name="FEEDBACK" Type="Byte" />
+          <Property Name="PROGRAMCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PROGRAMNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="EDUCATIONLANGUAGE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DEPARTMENTCODE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="EDUCATIONTYPECODE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PROGRAMLOGO" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PROGRAMPICTURE" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="INDEXPAGEMESSAGE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TEXTFIELD1" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="TEXTFIELD2" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="TEXTFIELD3" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="NUMBERFIELD1" Type="Double" />
+          <Property Name="NUMBERFIELD2" Type="Double" />
+          <Property Name="NUMBERFIELD3" Type="Double" />
+          <Property Name="SYNCKEY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SYNCDATE" Type="DateTime" Precision="3" />
+          <Property Name="SYNCAUTO" Type="Byte" Nullable="false" />
+          <Property Name="DBSTATUS" Type="Byte" Nullable="false" />
+          <Property Name="DATECREATED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DATEMODIFIED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="USERCREATED" Type="Guid" Nullable="false" />
+          <Property Name="USERMODIFIED" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="AL_CS_MT_PMCOURSE" Relationship="Self.FK_AL_CS_MT_PMCOURSE_AL_ST_PROGRAMS" FromRole="AL_ST_PROGRAMS" ToRole="AL_CS_MT_PMCOURSE" />
+          <NavigationProperty Name="AL_CS_ST_COURSE" Relationship="Self.FK_AL_CS_ST_COURSE_AL_ST_PROGRAMS" FromRole="AL_ST_PROGRAMS" ToRole="AL_CS_ST_COURSE" />
+        </EntityType>
+        <EntityType Name="WL_LS_LESSON_CONTROL">
+          <Key>
+            <PropertyRef Name="ELESSONID" />
+          </Key>
+          <Property Name="MCOURSEID" Type="Guid" />
+          <Property Name="ELESSONID" Type="Guid" Nullable="false" />
+          <Property Name="COURSEID" Type="Guid" />
+          <Property Name="STATUS" Type="Int32" />
+          <Property Name="PATH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NOTE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="USERCREATED" Type="Guid" />
+          <Property Name="DATECREATED" Type="DateTime" Precision="3" />
+          <Property Name="USERMODIFIED" Type="Guid" />
+          <Property Name="DATEMODIFIED" Type="DateTime" Precision="3" />
+          <Property Name="ISCONFIRM" Type="Boolean" />
+          <Property Name="STARTWEEK" Type="Int32" />
+          <Property Name="ENDWEEK" Type="Int32" />
+          <Property Name="STARTDAY" Type="Int32" />
+          <Property Name="ENDDAY" Type="Int32" />
+          <Property Name="ACTIVITYNAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TEMPLATEADDED" Type="Int32" />
+          <Property Name="ELESSONOLDID" Type="Guid" />
+        </EntityType>
+        <EntityType Name="WL_SR_ST_TEMPLATE_2">
+          <Key>
+            <PropertyRef Name="TEMPLATEID" />
+          </Key>
+          <Property Name="TEMPLATEID" Type="Guid" Nullable="false" />
+          <Property Name="MCOURSEID" Type="Guid" />
+          <Property Name="TITLE" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="TEXTFIELD1" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="TEXTFIELD2" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="TEXTFIELD3" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="NUMBERFIELD2" Type="Double" />
+          <Property Name="NUMBERFIELD1" Type="Double" />
+          <Property Name="NUMBERFIELD3" Type="Double" />
+          <Property Name="DATECREATED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DATEMODIFIED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="USERCREATED" Type="Guid" Nullable="false" />
+          <Property Name="USERMODIFIED" Type="Guid" Nullable="false" />
+          <Property Name="DBSTATUS" Type="Byte" Nullable="false" />
+          <Property Name="SRCTYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SRCURL" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SRCBODY" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="REFID" Type="Guid" />
+          <Property Name="SOURCEADDED" Type="Int32" />
+        </EntityType>
+        <Association Name="FK_AL_CS_MT_PMCOURSE_AL_ST_PROGRAMS">
+          <End Role="AL_ST_PROGRAMS" Type="Self.AL_ST_PROGRAMS" Multiplicity="1" />
+          <End Role="AL_CS_MT_PMCOURSE" Type="Self.AL_CS_MT_PMCOURSE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AL_ST_PROGRAMS">
+              <PropertyRef Name="PROGRAMID" />
+            </Principal>
+            <Dependent Role="AL_CS_MT_PMCOURSE">
+              <PropertyRef Name="PROGRAMID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AL_CS_ST_COURSE_AL_ST_PROGRAMS">
+          <End Role="AL_ST_PROGRAMS" Type="Self.AL_ST_PROGRAMS" Multiplicity="1" />
+          <End Role="AL_CS_ST_COURSE" Type="Self.AL_CS_ST_COURSE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AL_ST_PROGRAMS">
+              <PropertyRef Name="PROGRAMID" />
+            </Principal>
+            <Dependent Role="AL_CS_ST_COURSE">
+              <PropertyRef Name="PROGRAMID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SAUPORTDB" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AL_CS_MT_PMCOURSE" EntityType="Self.AL_CS_MT_PMCOURSE" />
+          <EntitySet Name="AL_CS_ST_COURSE" EntityType="Self.AL_CS_ST_COURSE" />
+          <EntitySet Name="AL_CS_ST_MASTERCOURSE" EntityType="Self.AL_CS_ST_MASTERCOURSE" />
+          <EntitySet Name="AL_LS_ST_ACTIVITY" EntityType="Self.AL_LS_ST_ACTIVITY" />
+          <EntitySet Name="AL_LS_ST_LESSON" EntityType="Self.AL_LS_ST_LESSON" />
+          <EntitySet Name="AL_SR_ST_SOURCE" EntityType="Self.AL_SR_ST_SOURCE" />
+          <EntitySet Name="AL_ST_PROGRAMS" EntityType="Self.AL_ST_PROGRAMS" />
+          <EntitySet Name="WL_LS_LESSON_CONTROL" EntityType="Self.WL_LS_LESSON_CONTROL" />
+          <EntitySet Name="WL_SR_ST_TEMPLATE_2" EntityType="Self.WL_SR_ST_TEMPLATE_2" />
+          <AssociationSet Name="FK_AL_CS_MT_PMCOURSE_AL_ST_PROGRAMS" Association="Self.FK_AL_CS_MT_PMCOURSE_AL_ST_PROGRAMS">
+            <End Role="AL_ST_PROGRAMS" EntitySet="AL_ST_PROGRAMS" />
+            <End Role="AL_CS_MT_PMCOURSE" EntitySet="AL_CS_MT_PMCOURSE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AL_CS_ST_COURSE_AL_ST_PROGRAMS" Association="Self.FK_AL_CS_ST_COURSE_AL_ST_PROGRAMS">
+            <End Role="AL_ST_PROGRAMS" EntitySet="AL_ST_PROGRAMS" />
+            <End Role="AL_CS_ST_COURSE" EntitySet="AL_CS_ST_COURSE" />
+          </AssociationSet>
+          <EntitySet Name="AL_CS_MT_ACTIVITY_GROUP" EntityType="SAUPORTModel.AL_CS_MT_ACTIVITY_GROUP" />
+          <EntitySet Name="AL_CS_ST_GROUP" EntityType="SAUPORTModel.AL_CS_ST_GROUP" />
+          <AssociationSet Name="FK_AL_CS_ST_GROUP_AL_CS_ST_COURSE" Association="SAUPORTModel.FK_AL_CS_ST_GROUP_AL_CS_ST_COURSE">
+            <End Role="AL_CS_ST_COURSE" EntitySet="AL_CS_ST_COURSE" />
+            <End Role="AL_CS_ST_GROUP" EntitySet="AL_CS_ST_GROUP" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AL_CS_MT_ACTIVITY_GROUP">
+          <Key>
+            <PropertyRef Name="GROUPID" />
+            <PropertyRef Name="ACTIVITYID" />
+          </Key>
+          <Property Name="GROUPID" Type="Guid" Nullable="false" />
+          <Property Name="ACTIVITYID" Type="Guid" Nullable="false" />
+          <Property Name="TIMEADDED" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="AL_CS_ST_GROUP">
+          <Key>
+            <PropertyRef Name="GROUPID" />
+          </Key>
+          <Property Name="GROUPID" Type="Guid" Nullable="false" />
+          <Property Name="COURSEID" Type="Guid" />
+          <Property Name="GROUPNAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GROUPTYPE" Type="Byte" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="MAXUSERS" Type="Int32" Nullable="false" />
+          <Property Name="PRIVACYMODE" Type="Byte" />
+          <Property Name="TEXTFIELD1" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="TEXTFIELD2" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="TEXTFIELD3" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="NUMBERFIELD1" Type="Double" />
+          <Property Name="NUMBERFIELD2" Type="Double" />
+          <Property Name="NUMBERFIELD3" Type="Double" />
+          <Property Name="DATECREATED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DATEMODIFIED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="USERCREATED" Type="Guid" Nullable="false" />
+          <Property Name="USERMODIFIED" Type="Guid" Nullable="false" />
+          <Property Name="DBSTATUS" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="AL_CS_ST_COURSE" Relationship="SAUPORTModel.FK_AL_CS_ST_GROUP_AL_CS_ST_COURSE" FromRole="AL_CS_ST_GROUP" ToRole="AL_CS_ST_COURSE" />
+        </EntityType>
+        <Association Name="FK_AL_CS_ST_GROUP_AL_CS_ST_COURSE">
+          <End Type="SAUPORTModel.AL_CS_ST_COURSE" Role="AL_CS_ST_COURSE" Multiplicity="0..1" />
+          <End Type="SAUPORTModel.AL_CS_ST_GROUP" Role="AL_CS_ST_GROUP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AL_CS_ST_COURSE">
+              <PropertyRef Name="COURSEID" />
+            </Principal>
+            <Dependent Role="AL_CS_ST_GROUP">
+              <PropertyRef Name="COURSEID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SAUPORTModelStoreContainer" CdmEntityContainer="SAUPORTDB">
+          <EntitySetMapping Name="AL_CS_MT_PMCOURSE">
+            <EntityTypeMapping TypeName="SAUPORTModel.AL_CS_MT_PMCOURSE">
+              <MappingFragment StoreEntitySet="AL_CS_MT_PMCOURSE">
+                <ScalarProperty Name="MCOURSEID" ColumnName="MCOURSEID" />
+                <ScalarProperty Name="PROGRAMID" ColumnName="PROGRAMID" />
+                <ScalarProperty Name="DATEADDED" ColumnName="DATEADDED" />
+                <ScalarProperty Name="MCOURSEID_OLD" ColumnName="MCOURSEID_OLD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AL_CS_ST_COURSE">
+            <EntityTypeMapping TypeName="SAUPORTModel.AL_CS_ST_COURSE">
+              <MappingFragment StoreEntitySet="AL_CS_ST_COURSE">
+                <ScalarProperty Name="COURSEID" ColumnName="COURSEID" />
+                <ScalarProperty Name="PROGRAMID" ColumnName="PROGRAMID" />
+                <ScalarProperty Name="MCOURSEID" ColumnName="MCOURSEID" />
+                <ScalarProperty Name="TERMID" ColumnName="TERMID" />
+                <ScalarProperty Name="COURSENAME" ColumnName="COURSENAME" />
+                <ScalarProperty Name="COURSECODE" ColumnName="COURSECODE" />
+                <ScalarProperty Name="ENROLLMENTTYPE" ColumnName="ENROLLMENTTYPE" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="PASSINGSCORE" ColumnName="PASSINGSCORE" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+                <ScalarProperty Name="TEXTFIELD1" ColumnName="TEXTFIELD1" />
+                <ScalarProperty Name="TEXTFIELD2" ColumnName="TEXTFIELD2" />
+                <ScalarProperty Name="TEXTFIELD3" ColumnName="TEXTFIELD3" />
+                <ScalarProperty Name="NUMBERFIELD1" ColumnName="NUMBERFIELD1" />
+                <ScalarProperty Name="NUMBERFIELD2" ColumnName="NUMBERFIELD2" />
+                <ScalarProperty Name="NUMBERFIELD3" ColumnName="NUMBERFIELD3" />
+                <ScalarProperty Name="DATECREATED" ColumnName="DATECREATED" />
+                <ScalarProperty Name="DATEMODIFIED" ColumnName="DATEMODIFIED" />
+                <ScalarProperty Name="USERCREATED" ColumnName="USERCREATED" />
+                <ScalarProperty Name="USERMODIFIED" ColumnName="USERMODIFIED" />
+                <ScalarProperty Name="DBSTATUS" ColumnName="DBSTATUS" />
+                <ScalarProperty Name="SYNCKEY_OLD" ColumnName="SYNCKEY_OLD" />
+                <ScalarProperty Name="SYNCDATE_OLD" ColumnName="SYNCDATE_OLD" />
+                <ScalarProperty Name="SYNCAUTO_OLD" ColumnName="SYNCAUTO_OLD" />
+                <ScalarProperty Name="ESTIMATEDDURATION" ColumnName="ESTIMATEDDURATION" />
+                <ScalarProperty Name="VIEWMODE" ColumnName="VIEWMODE" />
+                <ScalarProperty Name="COURSETYPE" ColumnName="COURSETYPE" />
+                <ScalarProperty Name="LASTSYNCID_OLD" ColumnName="LASTSYNCID_OLD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AL_CS_ST_MASTERCOURSE">
+            <EntityTypeMapping TypeName="SAUPORTModel.AL_CS_ST_MASTERCOURSE">
+              <MappingFragment StoreEntitySet="AL_CS_ST_MASTERCOURSE">
+                <ScalarProperty Name="MCOURSEID" ColumnName="MCOURSEID" />
+                <ScalarProperty Name="MCOURSECODE" ColumnName="MCOURSECODE" />
+                <ScalarProperty Name="MCOURSENAME" ColumnName="MCOURSENAME" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="CREDITS" ColumnName="CREDITS" />
+                <ScalarProperty Name="ECTS_CREDITS" ColumnName="ECTS_CREDITS" />
+                <ScalarProperty Name="CREDIT_THEORIC" ColumnName="CREDIT_THEORIC" />
+                <ScalarProperty Name="CREDIT_APPLICATION" ColumnName="CREDIT_APPLICATION" />
+                <ScalarProperty Name="ISCOMMON" ColumnName="ISCOMMON" />
+                <ScalarProperty Name="DATECREATED" ColumnName="DATECREATED" />
+                <ScalarProperty Name="MCOURSEID_OLD" ColumnName="MCOURSEID_OLD" />
+                <ScalarProperty Name="SYNCKEY" ColumnName="SYNCKEY" />
+                <ScalarProperty Name="SYNCDATE" ColumnName="SYNCDATE" />
+                <ScalarProperty Name="AUTOSYNC" ColumnName="AUTOSYNC" />
+                <ScalarProperty Name="SYNCNEWKEY" ColumnName="SYNCNEWKEY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AL_LS_ST_ACTIVITY">
+            <EntityTypeMapping TypeName="SAUPORTModel.AL_LS_ST_ACTIVITY">
+              <MappingFragment StoreEntitySet="AL_LS_ST_ACTIVITY">
+                <ScalarProperty Name="ACTIVITYID" ColumnName="ACTIVITYID" />
+                <ScalarProperty Name="COURSEID" ColumnName="COURSEID" />
+                <ScalarProperty Name="ITEMID" ColumnName="ITEMID" />
+                <ScalarProperty Name="ITEMORDER" ColumnName="ITEMORDER" />
+                <ScalarProperty Name="ACTIVITYNAME" ColumnName="ACTIVITYNAME" />
+                <ScalarProperty Name="ACTIVITYCODE" ColumnName="ACTIVITYCODE" />
+                <ScalarProperty Name="ENROLLMENTTYPE" ColumnName="ENROLLMENTTYPE" />
+                <ScalarProperty Name="FEEDBACK" ColumnName="FEEDBACK" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="ISOPTIONAL" ColumnName="ISOPTIONAL" />
+                <ScalarProperty Name="SCOREABLE" ColumnName="SCOREABLE" />
+                <ScalarProperty Name="PASSINGSCORE" ColumnName="PASSINGSCORE" />
+                <ScalarProperty Name="STARTWEEK" ColumnName="STARTWEEK" />
+                <ScalarProperty Name="STARTDAY" ColumnName="STARTDAY" />
+                <ScalarProperty Name="ENDWEEK" ColumnName="ENDWEEK" />
+                <ScalarProperty Name="ENDDAY" ColumnName="ENDDAY" />
+                <ScalarProperty Name="TEXTFIELD1" ColumnName="TEXTFIELD1" />
+                <ScalarProperty Name="TEXTFIELD2" ColumnName="TEXTFIELD2" />
+                <ScalarProperty Name="TEXTFIELD3" ColumnName="TEXTFIELD3" />
+                <ScalarProperty Name="NUMBERFIELD1" ColumnName="NUMBERFIELD1" />
+                <ScalarProperty Name="NUMBERFIELD2" ColumnName="NUMBERFIELD2" />
+                <ScalarProperty Name="NUMBERFIELD3" ColumnName="NUMBERFIELD3" />
+                <ScalarProperty Name="DATECREATED" ColumnName="DATECREATED" />
+                <ScalarProperty Name="DATEMODIFIED" ColumnName="DATEMODIFIED" />
+                <ScalarProperty Name="USERCREATED" ColumnName="USERCREATED" />
+                <ScalarProperty Name="USERMODIFIED" ColumnName="USERMODIFIED" />
+                <ScalarProperty Name="DBSTATUS" ColumnName="DBSTATUS" />
+                <ScalarProperty Name="TOTALPAGE" ColumnName="TOTALPAGE" />
+                <ScalarProperty Name="FINISHMESSAGE" ColumnName="FINISHMESSAGE" />
+                <ScalarProperty Name="MESSAGETOSHOW" ColumnName="MESSAGETOSHOW" />
+                <ScalarProperty Name="TRACKING" ColumnName="TRACKING" />
+                <ScalarProperty Name="AUTOSCORRING" ColumnName="AUTOSCORRING" />
+                <ScalarProperty Name="SACTIVITYID" ColumnName="SACTIVITYID" />
+                <ScalarProperty Name="OLDITEMID" ColumnName="OLDITEMID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AL_LS_ST_LESSON">
+            <EntityTypeMapping TypeName="SAUPORTModel.AL_LS_ST_LESSON">
+              <MappingFragment StoreEntitySet="AL_LS_ST_LESSON">
+                <ScalarProperty Name="MCOURSEID" ColumnName="MCOURSEID" />
+                <ScalarProperty Name="ELESSONID" ColumnName="ELESSONID" />
+                <ScalarProperty Name="LESSONNAME" ColumnName="LESSONNAME" />
+                <ScalarProperty Name="SHORTNAME" ColumnName="SHORTNAME" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="DEFAULTPAGE" ColumnName="DEFAULTPAGE" />
+                <ScalarProperty Name="LESSONTYPE" ColumnName="LESSONTYPE" />
+                <ScalarProperty Name="PACKAGEID" ColumnName="PACKAGEID" />
+                <ScalarProperty Name="ISSCOSCORING" ColumnName="ISSCOSCORING" />
+                <ScalarProperty Name="LANGUAGE" ColumnName="LANGUAGE" />
+                <ScalarProperty Name="USEINPLANNING" ColumnName="USEINPLANNING" />
+                <ScalarProperty Name="SCOIDENTIFIER" ColumnName="SCOIDENTIFIER" />
+                <ScalarProperty Name="SCOTITLE" ColumnName="SCOTITLE" />
+                <ScalarProperty Name="ESTIMATEDDURATION" ColumnName="ESTIMATEDDURATION" />
+                <ScalarProperty Name="TARGETAUDIENCE" ColumnName="TARGETAUDIENCE" />
+                <ScalarProperty Name="TEXTFIELD1" ColumnName="TEXTFIELD1" />
+                <ScalarProperty Name="TEXTFIELD2" ColumnName="TEXTFIELD2" />
+                <ScalarProperty Name="TEXTFIELD3" ColumnName="TEXTFIELD3" />
+                <ScalarProperty Name="NUMBERFIELD1" ColumnName="NUMBERFIELD1" />
+                <ScalarProperty Name="NUMBERFIELD2" ColumnName="NUMBERFIELD2" />
+                <ScalarProperty Name="NUMBERFIELD3" ColumnName="NUMBERFIELD3" />
+                <ScalarProperty Name="DATECREATED" ColumnName="DATECREATED" />
+                <ScalarProperty Name="DATEMODIFIED" ColumnName="DATEMODIFIED" />
+                <ScalarProperty Name="USERCREATED" ColumnName="USERCREATED" />
+                <ScalarProperty Name="USERMODIFIED" ColumnName="USERMODIFIED" />
+                <ScalarProperty Name="DBSTATUS" ColumnName="DBSTATUS" />
+                <ScalarProperty Name="CHTOOL" ColumnName="CHTOOL" />
+                <ScalarProperty Name="CHSTATUS" ColumnName="CHSTATUS" />
+                <ScalarProperty Name="CHTITLE" ColumnName="CHTITLE" />
+                <ScalarProperty Name="CONVERTEDSOURCE" ColumnName="CONVERTEDSOURCE" />
+                <ScalarProperty Name="INSTALLED" ColumnName="INSTALLED" />
+                <ScalarProperty Name="INSTALLEDMESSAGE" ColumnName="INSTALLEDMESSAGE" />
+                <ScalarProperty Name="FILECHECK" ColumnName="FILECHECK" />
+                <ScalarProperty Name="FILECHECKMESSAGE" ColumnName="FILECHECKMESSAGE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AL_SR_ST_SOURCE">
+            <EntityTypeMapping TypeName="SAUPORTModel.AL_SR_ST_SOURCE">
+              <MappingFragment StoreEntitySet="AL_SR_ST_SOURCE">
+                <ScalarProperty Name="ACTIVITYID" ColumnName="ACTIVITYID" />
+                <ScalarProperty Name="COURSEID" ColumnName="COURSEID" />
+                <ScalarProperty Name="ITEMID" ColumnName="ITEMID" />
+                <ScalarProperty Name="ITEMORDER" ColumnName="ITEMORDER" />
+                <ScalarProperty Name="ACTIVITYCODE" ColumnName="ACTIVITYCODE" />
+                <ScalarProperty Name="ACTIVITYNAME" ColumnName="ACTIVITYNAME" />
+                <ScalarProperty Name="ENROLLMENTTYPE" ColumnName="ENROLLMENTTYPE" />
+                <ScalarProperty Name="FEEDBACK" ColumnName="FEEDBACK" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="ISOPTIONAL" ColumnName="ISOPTIONAL" />
+                <ScalarProperty Name="SCOREABLE" ColumnName="SCOREABLE" />
+                <ScalarProperty Name="PASSINGSCORE" ColumnName="PASSINGSCORE" />
+                <ScalarProperty Name="STARTWEEK" ColumnName="STARTWEEK" />
+                <ScalarProperty Name="STARTDAY" ColumnName="STARTDAY" />
+                <ScalarProperty Name="ENDWEEK" ColumnName="ENDWEEK" />
+                <ScalarProperty Name="ENDDAY" ColumnName="ENDDAY" />
+                <ScalarProperty Name="TEXTFIELD1" ColumnName="TEXTFIELD1" />
+                <ScalarProperty Name="TEXTFIELD2" ColumnName="TEXTFIELD2" />
+                <ScalarProperty Name="TEXTFIELD3" ColumnName="TEXTFIELD3" />
+                <ScalarProperty Name="NUMBERFIELD2" ColumnName="NUMBERFIELD2" />
+                <ScalarProperty Name="NUMBERFIELD1" ColumnName="NUMBERFIELD1" />
+                <ScalarProperty Name="NUMBERFIELD3" ColumnName="NUMBERFIELD3" />
+                <ScalarProperty Name="DATECREATED" ColumnName="DATECREATED" />
+                <ScalarProperty Name="DATEMODIFIED" ColumnName="DATEMODIFIED" />
+                <ScalarProperty Name="USERCREATED" ColumnName="USERCREATED" />
+                <ScalarProperty Name="USERMODIFIED" ColumnName="USERMODIFIED" />
+                <ScalarProperty Name="DBSTATUS" ColumnName="DBSTATUS" />
+                <ScalarProperty Name="SRCTYPE" ColumnName="SRCTYPE" />
+                <ScalarProperty Name="SRCURL" ColumnName="SRCURL" />
+                <ScalarProperty Name="SRCBODY" ColumnName="SRCBODY" />
+                <ScalarProperty Name="VISITEDCOUNT" ColumnName="VISITEDCOUNT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AL_ST_PROGRAMS">
+            <EntityTypeMapping TypeName="SAUPORTModel.AL_ST_PROGRAMS">
+              <MappingFragment StoreEntitySet="AL_ST_PROGRAMS">
+                <ScalarProperty Name="PROGRAMID" ColumnName="PROGRAMID" />
+                <ScalarProperty Name="SITEID" ColumnName="SITEID" />
+                <ScalarProperty Name="CALENDERID" ColumnName="CALENDERID" />
+                <ScalarProperty Name="FEEDBACK" ColumnName="FEEDBACK" />
+                <ScalarProperty Name="PROGRAMCODE" ColumnName="PROGRAMCODE" />
+                <ScalarProperty Name="PROGRAMNAME" ColumnName="PROGRAMNAME" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="EDUCATIONLANGUAGE" ColumnName="EDUCATIONLANGUAGE" />
+                <ScalarProperty Name="DEPARTMENTCODE" ColumnName="DEPARTMENTCODE" />
+                <ScalarProperty Name="EDUCATIONTYPECODE" ColumnName="EDUCATIONTYPECODE" />
+                <ScalarProperty Name="PROGRAMLOGO" ColumnName="PROGRAMLOGO" />
+                <ScalarProperty Name="PROGRAMPICTURE" ColumnName="PROGRAMPICTURE" />
+                <ScalarProperty Name="INDEXPAGEMESSAGE" ColumnName="INDEXPAGEMESSAGE" />
+                <ScalarProperty Name="TEXTFIELD1" ColumnName="TEXTFIELD1" />
+                <ScalarProperty Name="TEXTFIELD2" ColumnName="TEXTFIELD2" />
+                <ScalarProperty Name="TEXTFIELD3" ColumnName="TEXTFIELD3" />
+                <ScalarProperty Name="NUMBERFIELD1" ColumnName="NUMBERFIELD1" />
+                <ScalarProperty Name="NUMBERFIELD2" ColumnName="NUMBERFIELD2" />
+                <ScalarProperty Name="NUMBERFIELD3" ColumnName="NUMBERFIELD3" />
+                <ScalarProperty Name="SYNCKEY" ColumnName="SYNCKEY" />
+                <ScalarProperty Name="SYNCDATE" ColumnName="SYNCDATE" />
+                <ScalarProperty Name="SYNCAUTO" ColumnName="SYNCAUTO" />
+                <ScalarProperty Name="DBSTATUS" ColumnName="DBSTATUS" />
+                <ScalarProperty Name="DATECREATED" ColumnName="DATECREATED" />
+                <ScalarProperty Name="DATEMODIFIED" ColumnName="DATEMODIFIED" />
+                <ScalarProperty Name="USERCREATED" ColumnName="USERCREATED" />
+                <ScalarProperty Name="USERMODIFIED" ColumnName="USERMODIFIED" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WL_LS_LESSON_CONTROL">
+            <EntityTypeMapping TypeName="SAUPORTModel.WL_LS_LESSON_CONTROL">
+              <MappingFragment StoreEntitySet="WL_LS_LESSON_CONTROL">
+                <ScalarProperty Name="ELESSONOLDID" ColumnName="ELESSONOLDID" />
+                <ScalarProperty Name="MCOURSEID" ColumnName="MCOURSEID" />
+                <ScalarProperty Name="ELESSONID" ColumnName="ELESSONID" />
+                <ScalarProperty Name="COURSEID" ColumnName="COURSEID" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="PATH" ColumnName="PATH" />
+                <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+                <ScalarProperty Name="USERCREATED" ColumnName="USERCREATED" />
+                <ScalarProperty Name="DATECREATED" ColumnName="DATECREATED" />
+                <ScalarProperty Name="USERMODIFIED" ColumnName="USERMODIFIED" />
+                <ScalarProperty Name="DATEMODIFIED" ColumnName="DATEMODIFIED" />
+                <ScalarProperty Name="ISCONFIRM" ColumnName="ISCONFIRM" />
+                <ScalarProperty Name="STARTWEEK" ColumnName="STARTWEEK" />
+                <ScalarProperty Name="ENDWEEK" ColumnName="ENDWEEK" />
+                <ScalarProperty Name="STARTDAY" ColumnName="STARTDAY" />
+                <ScalarProperty Name="ENDDAY" ColumnName="ENDDAY" />
+                <ScalarProperty Name="ACTIVITYNAME" ColumnName="ACTIVITYNAME" />
+                <ScalarProperty Name="TEMPLATEADDED" ColumnName="TEMPLATEADDED" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WL_SR_ST_TEMPLATE_2">
+            <EntityTypeMapping TypeName="SAUPORTModel.WL_SR_ST_TEMPLATE_2">
+              <MappingFragment StoreEntitySet="WL_SR_ST_TEMPLATE_2">
+                <ScalarProperty Name="TEMPLATEID" ColumnName="TEMPLATEID" />
+                <ScalarProperty Name="MCOURSEID" ColumnName="MCOURSEID" />
+                <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="TEXTFIELD1" ColumnName="TEXTFIELD1" />
+                <ScalarProperty Name="TEXTFIELD2" ColumnName="TEXTFIELD2" />
+                <ScalarProperty Name="TEXTFIELD3" ColumnName="TEXTFIELD3" />
+                <ScalarProperty Name="NUMBERFIELD2" ColumnName="NUMBERFIELD2" />
+                <ScalarProperty Name="NUMBERFIELD1" ColumnName="NUMBERFIELD1" />
+                <ScalarProperty Name="NUMBERFIELD3" ColumnName="NUMBERFIELD3" />
+                <ScalarProperty Name="DATECREATED" ColumnName="DATECREATED" />
+                <ScalarProperty Name="DATEMODIFIED" ColumnName="DATEMODIFIED" />
+                <ScalarProperty Name="USERCREATED" ColumnName="USERCREATED" />
+                <ScalarProperty Name="USERMODIFIED" ColumnName="USERMODIFIED" />
+                <ScalarProperty Name="DBSTATUS" ColumnName="DBSTATUS" />
+                <ScalarProperty Name="SRCTYPE" ColumnName="SRCTYPE" />
+                <ScalarProperty Name="SRCURL" ColumnName="SRCURL" />
+                <ScalarProperty Name="SRCBODY" ColumnName="SRCBODY" />
+                <ScalarProperty Name="REFID" ColumnName="REFID" />
+                <ScalarProperty Name="SOURCEADDED" ColumnName="SOURCEADDED" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AL_CS_MT_ACTIVITY_GROUP">
+            <EntityTypeMapping TypeName="SAUPORTModel.AL_CS_MT_ACTIVITY_GROUP">
+              <MappingFragment StoreEntitySet="AL_CS_MT_ACTIVITY_GROUP">
+                <ScalarProperty Name="TIMEADDED" ColumnName="TIMEADDED" />
+                <ScalarProperty Name="ACTIVITYID" ColumnName="ACTIVITYID" />
+                <ScalarProperty Name="GROUPID" ColumnName="GROUPID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AL_CS_ST_GROUP">
+            <EntityTypeMapping TypeName="SAUPORTModel.AL_CS_ST_GROUP">
+              <MappingFragment StoreEntitySet="AL_CS_ST_GROUP">
+                <ScalarProperty Name="DBSTATUS" ColumnName="DBSTATUS" />
+                <ScalarProperty Name="USERMODIFIED" ColumnName="USERMODIFIED" />
+                <ScalarProperty Name="USERCREATED" ColumnName="USERCREATED" />
+                <ScalarProperty Name="DATEMODIFIED" ColumnName="DATEMODIFIED" />
+                <ScalarProperty Name="DATECREATED" ColumnName="DATECREATED" />
+                <ScalarProperty Name="NUMBERFIELD3" ColumnName="NUMBERFIELD3" />
+                <ScalarProperty Name="NUMBERFIELD2" ColumnName="NUMBERFIELD2" />
+                <ScalarProperty Name="NUMBERFIELD1" ColumnName="NUMBERFIELD1" />
+                <ScalarProperty Name="TEXTFIELD3" ColumnName="TEXTFIELD3" />
+                <ScalarProperty Name="TEXTFIELD2" ColumnName="TEXTFIELD2" />
+                <ScalarProperty Name="TEXTFIELD1" ColumnName="TEXTFIELD1" />
+                <ScalarProperty Name="PRIVACYMODE" ColumnName="PRIVACYMODE" />
+                <ScalarProperty Name="MAXUSERS" ColumnName="MAXUSERS" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="GROUPTYPE" ColumnName="GROUPTYPE" />
+                <ScalarProperty Name="GROUPNAME" ColumnName="GROUPNAME" />
+                <ScalarProperty Name="COURSEID" ColumnName="COURSEID" />
+                <ScalarProperty Name="GROUPID" ColumnName="GROUPID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="41a69fef10004e90b01849fa118979e3" Name="Diagram1" ZoomLevel="85">
+        <EntityTypeShape EntityType="SAUPORTModel.AL_CS_MT_PMCOURSE" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SAUPORTModel.AL_CS_ST_COURSE" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="SAUPORTModel.AL_CS_ST_MASTERCOURSE" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SAUPORTModel.AL_LS_ST_ACTIVITY" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SAUPORTModel.AL_LS_ST_LESSON" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SAUPORTModel.AL_SR_ST_SOURCE" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SAUPORTModel.AL_ST_PROGRAMS" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SAUPORTModel.WL_LS_LESSON_CONTROL" Width="1.5" PointX="7.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SAUPORTModel.WL_SR_ST_TEMPLATE_2" Width="1.5" PointX="9.75" PointY="8.75" IsExpanded="true" />
+        <AssociationConnector Association="SAUPORTModel.FK_AL_CS_MT_PMCOURSE_AL_ST_PROGRAMS" ManuallyRouted="false" />
+        <AssociationConnector Association="SAUPORTModel.FK_AL_CS_ST_COURSE_AL_ST_PROGRAMS" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SAUPORTModel.AL_CS_MT_ACTIVITY_GROUP" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="SAUPORTModel.AL_CS_ST_GROUP" Width="1.5" PointX="5.625" PointY="14.125" />
+        <AssociationConnector Association="SAUPORTModel.FK_AL_CS_ST_GROUP_AL_CS_ST_COURSE" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
